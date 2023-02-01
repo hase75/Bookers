@@ -16,73 +16,45 @@
       <tr>
         <td>リーダブルコード</td>
         <td>より良いコードを書くためのシンプルで実践的なテクニック</td>
-        <td><a class="show_127443" href="/books/127443">Show</a></td>
-        <td><a class="edit_127443" href="/books/127443/edit">Edit</a></td>
-        <td><a data-confirm="Are you sure?" class="destroy_127443" rel="nofollow" data-method="delete" href="/books/127443">Destroy</a></td>
       </tr>
       <tr>
         <td>トラブル知らずのシステム設計</td>
         <td>システム設計の要点を図解で説明してくれます</td>
-        <td><a class="show_127444" href="/books/127444">Show</a></td>
-        <td><a class="edit_127444" href="/books/127444/edit">Edit</a></td>
-        <td><a data-confirm="Are you sure?" class="destroy_127444" rel="nofollow" data-method="delete" href="/books/127444">Destroy</a></td>
       </tr>
       <tr>
         <td>たのしいRuby</td>
         <td>Rubyの入門におすすめです</td>
-        <td><a class="show_127445" href="/books/127445">Show</a></td>
-        <td><a class="edit_127445" href="/books/127445/edit">Edit</a></td>
-        <td><a data-confirm="Are you sure?" class="destroy_127445" rel="nofollow" data-method="delete" href="/books/127445">Destroy</a></td>
       </tr>
       <tr>
         <td>入門Git</td>
         <td>gitについての基本操作から内部構造まで解説してくれます</td>
-        <td><a class="show_127446" href="/books/127446">Show</a></td>
-        <td><a class="edit_127446" href="/books/127446/edit">Edit</a></td>
-        <td><a data-confirm="Are you sure?" class="destroy_127446" rel="nofollow" data-method="delete" href="/books/127446">Destroy</a></td>
       </tr>
       <tr>
         <td>アルゴリズム図鑑</td>
         <td>アルゴリズムについてカラーイラストでしっかり解説してくれます</td>
-        <td><a class="show_127447" href="/books/127447">Show</a></td>
-        <td><a class="edit_127447" href="/books/127447/edit">Edit</a></td>
-        <td><a data-confirm="Are you sure?" class="destroy_127447" rel="nofollow" data-method="delete" href="/books/127447">Destroy</a></td>
       </tr>
       <tr>
         <td>達人プログラマー</td>
         <td>プログラマ入門者は必読！</td>
-        <td><a class="show_127448" href="/books/127448">Show</a></td>
-        <td><a class="edit_127448" href="/books/127448/edit">Edit</a></td>
-        <td><a data-confirm="Are you sure?" class="destroy_127448" rel="nofollow" data-method="delete" href="/books/127448">Destroy</a></td>
       </tr>
       <tr>
         <td>データベース実践入門</td>
         <td>効率的なSQL文を教えてくれます</td>
-        <td><a class="show_127449" href="/books/127449">Show</a></td>
-        <td><a class="edit_127449" href="/books/127449/edit">Edit</a></td>
-        <td><a data-confirm="Are you sure?" class="destroy_127449" rel="nofollow" data-method="delete" href="/books/127449">Destroy</a></td>
       </tr>
   </tbody>
 </table>
 
+<h1>New book</h1>
 
-<h2>New book</h2>
-<form class="new_book" id="new_book" action="/books" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="mJlO+Dr4QF/5r70l2LVsLWcfbms2yPrqlvYsZlA9/bo61ICrHKHZfn4n6OmvwPBOMCtZa1JPiW9xuqjmzYXkZQ==">
-
-  <div class="field">
-    <label for="book_title">Title</label>
-    <input class="book_title" type="text" name="book[title]" id="book_title">
-  </div>
-
-  <div class="field">
-    <label for="book_body">Body</label>
-    <textarea class="book_body" name="book[body]" id="book_body"></textarea>
-  </div>
-
-  <div class="actions">
-    <input type="submit" name="commit" value="Create Book" data-disable-with="Create Book">
-  </div>
-</form>
+<%= form_with model: @book do |f| %>
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+	
+  <h4>Body</h4>
+  <%= f.text_area :body %>
+	
+  <%= f.submit 'Create Book' %>
+<% end %>
 
 
 </body>
